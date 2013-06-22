@@ -120,7 +120,7 @@ function! b:SlimvSwankLoader()
     if executable( 'lein' )
         if globpath( '~/.lein/plugins', 'lein-ritz*.jar' ) != ''
             return '"lein ritz ' . g:swank_port . '"'
-        elsif globpath( '~/.m2/lein-ritz', 'lein-ritz' ) != ''
+        elseif globpath( '~/.m2/repository/lein-ritz', 'lein-ritz' ) != ''
             return '"lein ritz ' . g:swank_port . '"'
         else
             return '"lein swank"'
